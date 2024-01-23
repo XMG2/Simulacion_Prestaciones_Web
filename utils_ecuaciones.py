@@ -38,7 +38,7 @@ def calcular_tiempo_residencia_operacion_por_recurso(
     r = índice de la clase de operación
     """
     return demandas[i, r] / (
-        1 - calcular_utilizacion_recurso(tasas_llegada, demandas[:, i], vector_n[i])
+        1 - calcular_utilizacion_recurso(tasas_llegada, demandas[i, :], vector_n[i])
     )
 
 
@@ -69,7 +69,7 @@ def calcular_tiempo_residencia_operacion_por_recurso_multiservidor(
     r = índice de la clase de operación
     """
     return demandas[i, r] * ((vector_n[i] - 1) / vector_n[i]) + demandas[i, r] / (
-        1 - calcular_utilizacion_recurso(tasas_llegada, demandas[:, i], vector_n[i])
+        1 - calcular_utilizacion_recurso(tasas_llegada, demandas[i, :], vector_n[i])
     )
 
 
